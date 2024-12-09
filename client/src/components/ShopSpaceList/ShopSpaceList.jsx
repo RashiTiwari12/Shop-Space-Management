@@ -19,7 +19,7 @@ const ShopSpaceList = () => {
     };
 
     fetchSpace();
-  });
+  }, []);
 
   const onEdit = (space) => {
     console.log("Edit clicked for:", space);
