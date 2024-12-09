@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./ShopSpaceForm.css";
-const ShopSpaceForm = () => {
+const ShopSpaceForm = ({ setRefresh }) => {
   const [formData, setFormData] = useState({
     name: "",
     type: "hanger",
@@ -22,6 +22,7 @@ const ShopSpaceForm = () => {
     try {
       const response = await axios.post("/api/spaces", formData);
       console.log("Form submitted successfully:", response.data);
+      setRefresh((prev) => !prev);
     } catch (error) {
       console.error("Error submitting form:", error);
     }

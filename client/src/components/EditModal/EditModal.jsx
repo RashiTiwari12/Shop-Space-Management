@@ -40,7 +40,7 @@ const EditModal = ({ space, onClose, onUpdate }) => {
       const response = await axios.put(`/api/spaces/${space.id}`, updatedSpace);
       console.log("Updated successfully:", response.data);
 
-      onUpdate(response.data);
+      onUpdate(updatedSpace);
     } catch (error) {
       console.error("Error updating space:", error);
     }
